@@ -1,0 +1,52 @@
+js is dyanamic datatype lang => loosley copuled
+
+sync task (first priorty) async (second) => event loop => call stack , event queue
+
+js is case senstive 
+
+by default : js synchronous lang, it is single threaded, you can make js multi threaded  
+
+clg('1'); // 2 sec
+clg('2'); // 1 sec
+
+1
+2
+
+js asynchronous  => callback => make js acts as multi threaded => by offloading heavy/async task to system kernel
+
+setTimeout( () => {
+    clg('1')
+}, 0)
+fetch() => 2sec
+
+console.log('2') // 1 sec
+
+// 2
+// 1
+
+callback => promise => async/await
+
+node filepath
+<script> </script>
+
+babel js 
+ES5 => ES6(ES2024)
+
+var x = 'divyansh' // es6  // string 
+var X
+var x = new String('divyansh'); // object
+
+var obj = new Object()
+
+
+
+git clone https://github.com/divyanshdixit/javascript-batch-stephen.git
+
+
+git stash -u (to stash all the code in work dir)
+
+git pull (run on main branch )
+
+git pull origin main (your branch)
+
+git stash apply
