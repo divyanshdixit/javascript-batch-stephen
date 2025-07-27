@@ -24,6 +24,10 @@ console.log('2') // 1 sec
 // 2
 // 1
 
+// printing the o/p in js:
+1- print into console
+2- we can use html web page => DOM => document.getElementById('idname').innerHTML = "hello"
+
 callback => promise => async/await
 
 node filepath
