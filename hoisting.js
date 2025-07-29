@@ -21,7 +21,7 @@ hoist the declaration at the top (exits) and it is not initalized (temporal dead
 
 class declaration/ class expression 
 
-- class declaration => it behaves similar to let, const and var (cant not access "class" before init)
+- class declaration => are hoisted by name only , just like let const but not initalized immediately, so they are in TDZ. (cant not access "class" before init)
 - class expression => for let const and var it will work same as variable but the error in var case (<className> is not a constructor)
 
 */
