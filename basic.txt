@@ -1,16 +1,35 @@
-js is dyanamic datatype lang => loosley copuled
+0- // printing the o/p in js:
 
-sync task (first priorty) async (second) => event loop => call stack , event queue
+a - print into console
+b - we can use html web page => DOM => document.getElementById('idname').innerHTML = "hello"
 
-js is case senstive 
+
+1 - js is dyanamic datatype lang => loosley copuled.
+
+a = "divyansh"
+a = 10
+a = true
+
+2 - js is case senstive
+
+3 - sync task (first priorty) async (second) => event loop => call stack , event queue
+
+
+var a = 10;
+var A = 10;
+
+4 - js is single threaded;
 
 by default : js synchronous lang, it is single threaded, you can make js multi threaded  
 
-clg('1'); // 2 sec
-clg('2'); // 1 sec
+console.log('first') // 1sec
+console.log('second') // 3 sec
+console.log('third') // 1.5 sec
 
-1
-2
+first
+second
+third
+
 
 js asynchronous  => callback => make js acts as multi threaded => by offloading heavy/async task to system kernel
 
@@ -24,12 +43,12 @@ console.log('2') // 1 sec
 // 2
 // 1
 
-// printing the o/p in js:
-1- print into console
-2- we can use html web page => DOM => document.getElementById('idname').innerHTML = "hello"
-
 callback => promise => async/await
 
+
+5 - js is lexically scoped;
+
+==================================
 node filepath
 <script> </script>
 

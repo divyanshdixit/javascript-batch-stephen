@@ -1,3 +1,6 @@
+// es15
+// es6
+
 // var => global scope variable , we can re-declare it => ES5
 // let, const => block scope variable, we can't redelcare it into same scope => ES6
 

@@ -1,3 +1,4 @@
+console.log('datatypes')
 // primitive => (
 // can not be change / immutable, => reference/address not for value
 //  they don't have their own props and methods
@@ -20,23 +21,27 @@ console.log(typeof x);
 // null => object
 // array => this is special kind of object
 
-var obj1 = { // => key: value , 1002
-    name: 'Dixit',
-    age: 24,
+
+var a; // declare
+console.log(a) // undefined
+a = 10; // defintion
+console.log(a); // 10
+
+var a = 10; // 1000
+
+a = 20; // 1002
+
+var person = { // 1100
+    name: "divyansh",
+    city: "noida",
+    age: 28,
 }
-var obj2 = { // 1004
-     name: 'Dixit',
-    age: 24,
+
+var person = { // 1100
+    name: "divyansh",
+    city: "noida",
+    age: 29, // we have changed the value here at same address/reference
 }
 
-var name = 'Divyansh'; // address into ram 1000
-name = 'Dixit'; // 1003
 
 
-var name = String('Divyansh'); 
-
-var age = 24 // 1001
-
-
-var obj3 = obj1; // 1002
-console.log(obj3) ;
