@@ -32,6 +32,7 @@ jobs:
 
       # step 3: install dependencies
       - name: Install depen
+        if: ${{ hashFiles('package.json' != '') }}
         run: npm install
 
       # step 4: Run test if present
@@ -40,4 +41,10 @@ jobs:
 
       # step 5: make build 
       - name: make and run build of the project
-        run: npm run build
+        if: ${{ hashFiles('package.json') != '' }}
+        run: |
+          npm run build
+
+      # step 6: final step
+      - name: Final step echo
+        run: echo "no need of build, it's plain js project"
