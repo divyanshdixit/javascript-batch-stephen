@@ -43,7 +43,7 @@ jobs:
       # step 5: make build 
       - name: make and run build of the project
         run: |
-          if [-f package.json]; then
+          if [ -f package.json ]; then
             echo "Found package.json, running build cmd..."
             npm run build
           else
