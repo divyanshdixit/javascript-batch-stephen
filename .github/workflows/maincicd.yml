@@ -48,3 +48,4 @@ jobs:
             npm run build
           else
             echo "Package.json not found, no need to build, it's plain js project."
+          fi
