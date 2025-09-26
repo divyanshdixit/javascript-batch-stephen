@@ -37,13 +37,13 @@ jobs:
 
       # step 4: Run test if present
       - name: Run test
+        if: ${{ hashFiles('package.json') != '' }}
         run: npm run test --if-present
 
       # step 5: make build 
       - name: make and run build of the project
         if: ${{ hashFiles('package.json') != '' }}
-        run: |
-          npm run build
+        run: npm run build
 
       # step 6: final step
       - name: Final step echo
