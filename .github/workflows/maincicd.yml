@@ -1,0 +1,43 @@
+# workflow name:
+name: Javascript-stephen-ci
+#events those will triggred the workflow so jobs will run
+on:
+  push: 
+    branches: [main]
+  pull_request:
+    branches: [main]
+#jobs will run in workflow:
+jobs:
+  #name of the job
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello
+        run: echo "hello world"
+
+  build-and-test:
+    runs-on: ubuntu-latest
+    # steps will execute in the job
+    steps:
+      # step 1: clone the code in vm's runner using checkout
+      #name of the step
+      - name: clone (checkout) the code in vm    
+        uses: actions/checkout@v5.0.0
+
+      # step 2: setup node js env
+      - name: Setup Node js version
+        uses: actions/setup-node@v5.0.0
+        with:
+            node-version: 20
+
+      # step 3: install dependencies
+      - name: Install depen
+        run: npm install
+
+      # step 4: Run test if present
+      - name: Run test
+        run: npm run test --if-present
+
+      # step 5: make build 
+      - name: make and run build of the project
+        run: npm run build
