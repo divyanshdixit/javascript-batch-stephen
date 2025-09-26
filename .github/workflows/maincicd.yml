@@ -42,9 +42,9 @@ jobs:
 
       # step 5: make build 
       - name: make and run build of the project
-        if: ${{ hashFiles('package.json') != '' }}
-        run: npm run build
-
-      # step 6: final step
-      - name: Final step echo
-        run: echo "no need of build, it's plain js project"
+        run: |
+          if [-f package.json]; then
+            echo "Found package.json, running build cmd..."
+            npm run build
+          else
+            echo "Package.json not found, no need to build, it's plain js project."
