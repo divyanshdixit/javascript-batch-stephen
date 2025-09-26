@@ -32,17 +32,17 @@ jobs:
 
       # step 3: install dependencies
       - name: Install depen
-        if: ${{ exists('package.json') }}
+        if: ${{ hashFiles('package.json') != '' }}
         run: npm install
 
       # step 4: Run test if present
       - name: Run test
-        if: ${{ exists('package.json') }}
+        if: ${{ hashFiles('package.json') != '' }}
         run: npm run test --if-present
 
       # step 5: make build 
       - name: make and run build of the project
-        if: ${{ exists('package.json') }}
+        if: ${{ hashFiles('package.json') != '' }}
         run: npm run build
 
       # step 6: final step
