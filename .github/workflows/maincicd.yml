@@ -65,8 +65,16 @@ jobs:
           username:  ${{secrets.DOCKERHUB_USERNAME}}
           password: ${{ secrets.DOCKERHUB_PASSWORD}}
           
+      - name: set Docker image version
+        run: |
+          echo "IMAGE_TAG=v-${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+          echo "Image tag is ${{ env.IAMGE_TAG }}"
+
       - name: build docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:latest .
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:${{ env.IAMGE_TAG }} .
       
-      - name: Push Docker image
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:latest
+      - name: Push Docker image and latest tag also
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:${{ env.IAMGE_TAG }}
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:${{ env.IAMGE_TAG }} ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:latest
