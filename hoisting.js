@@ -59,13 +59,16 @@ function sum2(){ // regular func / fun declaration
 }
 
 // class declartion / regualar class
-
+var c1 = new Car();
 class Car {
     constructor(){
         this.model = "xv";
         this.year = 2025;
     }
 }
+
+var c1 = new Car();
+console.log(c1) // Car { model: 'xv', year: 2025
 
 
 // class expression => unnamed, named
@@ -75,3 +78,4 @@ var Car = class {
         this.year = 2025;
     }
 }
+
