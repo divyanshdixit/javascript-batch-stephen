@@ -99,14 +99,14 @@ jobs:
       # step3: deploy via ssh
       - name: deploy docker container on vps
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << EOF
           echo "Stopping existing container if running..."
           docker stop js_test_app || true
           docker rm js_test_app || true
 
           echo "Pulling latest Docker image..."
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:$IMAGE_TAG
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:${{ env.IMAGE_TAG }}
 
           echo "Starting new container..."
-          docker run -d -p 80:80 --name stephen-js-app-$IMAGE_TAG ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:$IMAGE_TAG
+          docker run -d -p 80:80 --name stephen-js-app-${{ env.IMAGE_TAG }} ${{ secrets.DOCKERHUB_USERNAME }}/js_test_app:${{ env.IMAGE_TAG }}
           EOF
